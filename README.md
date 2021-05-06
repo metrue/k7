@@ -7,7 +7,9 @@ $ make setup
 ```
 
 2. Add influxDB as a Data Source of Grafana 
-Open http://localhost:3000 to login with the default username and password  `admin/admin` , then  add the influxDB data source and configure the database name.
+Open http://localhost:3000 to login with the default username and password  `admin/admin` , then  add the influxDB data source and configure the database name. Since influxDB is running with docker compose, source you should get the real IP address of you machine and input it into data source config, `localhost` may not work.
+
+![config_data_source](https://raw.githubusercontent.com/metrue/k7/master/data_source_setting_sn.png)
 
 3. Configure the dashboard 
 Mouse over “+” on the left menu and you will see “Import”,  then import from `docker/grafan_dashboard.json`
@@ -33,4 +35,4 @@ $ cat docker/grafan_dashboard.json | jq '.__requires | .[] | select(.type=="data
 ### Reference
 
 1. https://k6.io/
-2. https://grafana.com/grafana/cdashboards/2587
+2. https://grafana.com/grafana/dashboards/2587
